@@ -17,6 +17,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "Glasses",
+  title: "Glasses",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
   id: "SenseCurrentSCP",
   title: "SenseCurrentSCP",
   contexts: ["selection"]
@@ -548,6 +554,14 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "Webster") {
     const selectedText = info.selectionText;
     const archiveUrl = `https://www.merriam-webster.com/dictionary/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl });
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "Glasses") {
+    const selectedText = info.selectionText;
+    const archiveUrl = `https://domain.glass/${selectedText}`;
     chrome.tabs.create({ url: archiveUrl });
   }
 });
