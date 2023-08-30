@@ -11,6 +11,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "Webster",
+  title: "Definition",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
   id: "Link",
   title: "Link",
   contexts: ["selection"]
@@ -498,6 +504,13 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   }
 });
 
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "Webster") {
+    const selectedText = info.selectionText;
+    const archiveUrl = `https://www.merriam-webster.com/dictionary/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl });
+  }
+});
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "XSearch") {
