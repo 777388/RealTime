@@ -410,7 +410,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     const laters = new Date();
     const times = laters.getTime();
     const doot = laters.toLocaleDateString();
-    const selectedText = info.selectedText + (Math.log(time + date).toString());
+    const selectedText = info.selectionText + (Math.log(time + date).toString());
     const deselectedText = Math.log(times + info.selectionText + doot).toString();
     let x = []
     if (selectedText !== deselectedText){
