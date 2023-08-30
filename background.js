@@ -5,6 +5,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "WikiSearch",
+  title: "WikiSearch",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
   id: "Link",
   title: "Link",
   contexts: ["selection"]
@@ -307,7 +313,13 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   }
 });
 
-
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "WikiSearch") {
+    const selectedText = info.selectionText;
+    const archiveUrl = `https://en.wikipedia.org/wiki/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl });
+  }
+});
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "MassData") {
