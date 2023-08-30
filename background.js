@@ -561,7 +561,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "Glasses") {
     const selectedText = info.selectionText;
-    const archiveUrl = `https://domain.glass/${selectedText}`;
+    const archiveUrl = `https://domain.glass/${selectedText}.com`;
     chrome.tabs.create({ url: archiveUrl });
   }
 });
