@@ -11,6 +11,24 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "CIASearch",
+  title: "CIASearch",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
+  id: "SenseCurrentSCP",
+  title: "SenseCurrentSCP",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
+  id: "MatrixSearch",
+  title: "MatrixSearch",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
   id: "Webster",
   title: "Definition",
   contexts: ["selection"]
@@ -421,6 +439,28 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "SenseCurrentSCP") {
+    const now = new Date();
+    const time = now.getTime();
+    const date = now.toLocaleDateString();
+    const selectedText = time + info.selectionText + date ;
+    x = []
+        for (const char in selectedText){
+            x.push(char.charCodeAt());   
+         }
+    const sum = (arr) =>{
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+            total += (arr[i]*arr[i]);
+        }
+        return (total * (arr.length * arr.length) % 7999);
+    };
+    const result = sum(x);
+    chrome.tabs.create({ url: `https://scp-wiki.wikidot.com/scp-${result}` });
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "SenseCurrentPresence") {
     const now = new Date();
     const time = now.getTime();
@@ -508,6 +548,22 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "Webster") {
     const selectedText = info.selectionText;
     const archiveUrl = `https://www.merriam-webster.com/dictionary/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl });
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "CIASearch") {
+    const selectedText = info.selectionText;
+    const archiveUrl = `https://www.cia.gov/readingroom/search/site/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl });
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "MatrixSearch") {
+    const selectedText = info.selectionText;
+    const archiveUrl = `https://www.gematrix.org/?word=${selectedText}`;
     chrome.tabs.create({ url: archiveUrl });
   }
 });
