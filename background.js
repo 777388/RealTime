@@ -663,8 +663,8 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     chrome.tabs.create({ url: archiveUrl25 });
     const archiveUrl26 = `https://nasasearch.nasa.gov/search?query=${selectedText}&affiliate=nasa&utf8=✓`;
     chrome.tabs.create({ url: archiveUrl26 });
-    const archiveUrl26 = `https://www.bible.com/search/bible?query=${selectedText}`;
-    chrome.tabs.create({ url: archiveUrl26 });
+    const archiveUrl26a = `https://www.bible.com/search/bible?query=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl26a });
     const archiveUrl27 = `https://pantheon.org/search/?ie=utf-8&q=${selectedText}`;
     chrome.tabs.create({ url: archiveUrl27 });
     const archiveUrl28 = `https://www.patreon.com/search?q=${selectedText}`;
@@ -685,6 +685,8 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     chrome.tabs.create({ url: archiveUrl35 });
     const archiveUrl36 = `https://www.google.com/search?q=site%3A%28com%7C%7C%7C%7C%7C%7C%7C%7C%7C%7Ccom%29+%26+${selectedText}`;
     chrome.tabs.create({ url: archiveUrl36 });
+    const archiveUrl37 = `https://search.usa.gov/search?affiliate=usagov_all_gov&query=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl37 });
   }
 });
 
