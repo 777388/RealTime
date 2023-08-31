@@ -713,6 +713,21 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   }
 });
 
+
+chrome.contextMenus.create({
+  id: "MysticArchive",
+  title: "MysticArchive",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "MysticArchive") {
+    const selectedText = info.selectionText;
+    const archiveUrl = `https://archive.org/search?query=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl });
+  }
+});
+
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "MatrixSearch") {
     const selectedText = info.selectionText;
@@ -727,4 +742,49 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     const archiveUrl = `https://twitter.com/search?q=${selectedText}&src=typed_query`;
     chrome.tabs.create({ url: archiveUrl });
   }
+});
+
+chrome.contextMenus.create({
+  id: "MassDataFast",
+  title: "MassDataFast",
+  contexts: ["selection"]
+});
+let boop = [];
+function gis(z, d) {
+  const now = new Date();
+  const time = now.getTime();
+  const date = now.toLocaleString();
+  const bingbong = String.fromCharCode(z);
+  boop.push(z, d);
+  const selectedText = time + date + bingbong;
+  const yup = selectedText.split("").reduce((acc, char) => acc + char.charCodeAt(), 0).toString();
+  const x = yup.split("").map(Number);
+  const sum = (arr) => {
+    let total = 0;
+    for (let v = 0; v <= arr.length; v++) {
+      total += (arr[v] * arr[v]);
+    };
+    console.log({ url: `https://${(total * (arr.length * arr.length))}.com`});
+    return total * (arr.length * arr.length);
+  };
+  const result = sum(x) * sum(x);
+};
+
+async function bang(l) {
+  for (let j = 0; j <= 149186;j++) {
+    await gis(j, l);
+  };
+};
+
+async function beepboop(){
+  for (let i = 0; i <= 45; i++) {
+    await bang(i);
+  };
+};
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "MassDataFast") {
+
+    beepboop();
+  };
 });
