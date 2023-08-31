@@ -45,6 +45,8 @@ FearAndLoathing: Page chooser for Hunter S Thompson's Fear And Loathing in Las V
 
 MassData: Mathematical Domain Mass Data Logger, to access the log run it with the background console open in chrome://extension 1+E238 domains.
 
+MassDataFaster: Orchestration of MassData through Asynchronous Actions, (May cause stalling until finished, est  1-2 minutes)
+
 Reversing: Reverse Engineering page chooser on the book Reversing Secrets of Reverse Engineering
 
 ReverseLight: Backend recon regarding what was highlighted.
