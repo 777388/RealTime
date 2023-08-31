@@ -13,7 +13,7 @@ Accumulator: Accumulate to mathematical domain.
 
 WikiSearch: search highlighted through wikipedia
 
-BigSearch: Opens up tabs of whats highlighted searching through Spotify, IMDb, epic games, steam, microsoft, github, guitarcenter, musiciansfriend, ebay, amazon, wikipedia, fbi, reddit, 4chan, tumblr, deviantart, alienvault, gematrix, google news, instagram, merriam-webster, twitter, cia, metager, alltheinternet, qwant, startpage, yandex, webcrawler, dogpile, aol, duckduckgo, google, youtube, swisscows, yahoo, ecosia, wolframalpha, baidu, bing 
+BigSearch: Opens up tabs of whats highlighted searching through Spotify, IMDb, epic games, steam, microsoft, github, guitarcenter, musiciansfriend, ebay, amazon, wikipedia, fbi, reddit, 4chan, tumblr, deviantart, alienvault, gematrix, google news, instagram, merriam-webster, twitter, cia, metager, alltheinternet, qwant, startpage, yandex, webcrawler, dogpile, aol, duckduckgo, google, youtube, swisscows, yahoo, ecosia, wolframalpha, baidu, bing, patents, archive, google books, google maps, nasa, bible, pantheon, patreon, harvard databases, congress, harvard business review, international brand database, gov search, mil search, mirror search, USA.gov
 
 CIASearch: CIA search
 
