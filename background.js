@@ -631,6 +631,26 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     chrome.tabs.create({ url: archiveUrlh });
     const archiveUrlm = `https://vault.fbi.gov/search?SearchableText=${selectedText}`;
     chrome.tabs.create({ url: archiveUrlm });
+    const archiveUrl12 = `https://en.wikipedia.org/wiki/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl12 });
+    const archiveUrl11 = `https://www.amazon.com/s?k=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl11 });
+    const archiveUrl10 = `https://www.ebay.com/sch/i.html?_nkw=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl10 });
+    const archiveUrl14 = `https://www.musiciansfriend.com/search?Ntt=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl14 });
+    const archiveUrl15 = `https://www.guitarcenter.com/search?Ntt=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl15 });
+    const archiveUrl16 = `https://github.com/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl16 });
+    const archiveUrl17 = `https://apps.microsoft.com/store/search/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl17 });
+    const archiveUrl18 = `https://store.steampowered.com/search/?term=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl18 });
+    const archiveUrl19 = `https://store.epicgames.com/en-US/browse?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl19 });
+    const archiveUrl20 = `https://www.imdb.com/find/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl20 });
   }
 });
 
