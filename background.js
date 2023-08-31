@@ -11,6 +11,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "BigSearch",
+  title: "BigSearch",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
   id: "CIASearch",
   title: "CIASearch",
   contexts: ["selection"]
@@ -555,6 +561,76 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     const selectedText = info.selectionText;
     const archiveUrl = `https://www.merriam-webster.com/dictionary/${selectedText}`;
     chrome.tabs.create({ url: archiveUrl });
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "BigSearch") {
+    const selectedText = info.selectionText;
+    const archiveUrl = `https://www.bing.com/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl });
+    const archiveUrl1 = `https://www.baidu.com/s?wd=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl1 });
+    const archiveUrl2 = `https://www.wolframalpha.com/input?i=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl2 });
+    const archiveUrl3 = `https://www.ecosia.org/search?method=index&q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl3 });
+    const archiveUrl4 = `https://search.yahoo.com/search?p=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl4 });
+    const archiveUrl5 = `https://swisscows.com/en/web?query=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl5 });
+    const archiveUrl6 = `https://www.youtube.com/results?search_query=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl6 });
+    const archiveUrl7 = `https://www.mojeek.com/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl7 });
+    const archiveUrl8 = `https://www.google.com/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl8 });
+    const archiveUrl9 = `https://duckduckgo.com/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl9 });
+    const archiveUrla = `https://search.aol.com/aol/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrla });
+    const archiveUrls = `https://search3.lycos.com/web/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrls });
+    const archiveUrld = `https://www.dogpile.com/serp?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrld });
+    const archiveUrlf = `https://www.webcrawler.com/serp?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlf });
+    const archiveUrlq = `https://yandex.com/search/?text=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlq });
+    const archiveUrlw = `https://www.startpage.com/sp/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlw });
+    const archiveUrle = `https://www.qwant.com/?l=en&q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrle });
+    const archiveUrlr = `https://www.alltheinternet.com/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlr });
+    const archiveUrlz = `https://metager.org/meta/meta.ger3?eingabe=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlz });
+    const archiveUrlx = `https://www.cia.gov/readingroom/search/site/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlx });
+    const archiveUrlc = `https://twitter.com/search?q=${selectedText}&src=typed_query`;
+    chrome.tabs.create({ url: archiveUrlc });
+    const archiveUrlv = `https://www.merriam-webster.com/dictionary/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlv });
+    const archiveUrlp = `https://www.instagram.com/explore/search/keyword/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlp });
+    const archiveUrlo = `https://www.google.com/search?q=${selectedText}&tbm=nws`;
+    chrome.tabs.create({ url: archiveUrlo });
+    const archiveUrli = `https://www.gematrix.org/?word=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrli });
+    const archiveUrlu = `https://otx.alienvault.com/browse/global/pulses?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlu });
+    const archiveUrly = `https://www.deviantart.com/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrly });
+    const archiveUrll = `https://www.tumblr.com/search/${selectedText}`;
+    chrome.tabs.create({ url: archiveUrll });
+    const archiveUrlk = `https://4chansearch.com/?q=${selectedText}&s=1`;
+    chrome.tabs.create({ url: archiveUrlk });
+    const archiveUrlj = `https://www.reddit.com/search/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlj });
+    const archiveUrlh = `https://groups.google.com/search?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlh });
+    const archiveUrlm = `https://vault.fbi.gov/search?SearchableText=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrlm });
   }
 });
 
