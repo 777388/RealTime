@@ -7,7 +7,7 @@ then go into chrome://extensions and then load unpacked and then load in the Rea
 
 Right click on a page for some of the extensions, highlight and right click for others. Enjoy!
 
-List:
+List: (Bible is on line 666 if you don't trust this)
 
 Accumulator: Accumulate to mathematical domain.
 
