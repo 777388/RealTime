@@ -689,6 +689,11 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     chrome.tabs.create({ url: archiveUrl37 });
     const archiveUrl18a = `https://crt.sh/?q=${selectedText}`;
     chrome.tabs.create({ url: archiveUrl18a });
+    const archiveUrl18b = `https://pypi.org/search/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl18b });
+    const archiveUrl18c = `https://www.acronymfinder.com/${selectedText}.html`;
+    chrome.tabs.create({ url: archiveUrl18c });
+
   }
 });
 
