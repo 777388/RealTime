@@ -687,6 +687,8 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     chrome.tabs.create({ url: archiveUrl36 });
     const archiveUrl37 = `https://search.usa.gov/search?affiliate=usagov_all_gov&query=${selectedText}`;
     chrome.tabs.create({ url: archiveUrl37 });
+    const archiveUrl18a = `https://crt.sh/?q=${selectedText}`;
+    chrome.tabs.create({ url: archiveUrl18a });
   }
 });
 
