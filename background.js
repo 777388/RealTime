@@ -23,6 +23,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "BackroomsSearch",
+  title: "BackroomsSearch",
+  contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
   id: "Glasses",
   title: "Glasses",
   contexts: ["selection"]
@@ -473,6 +479,28 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "BackroomsSearch") {
+    const now = new Date();
+    const time = now.getTime();
+    const date = now.toLocaleDateString();
+    const selectedText = time + info.selectionText + date ;
+    x = []
+        for (const char in selectedText){
+            x.push(char.charCodeAt());   
+         }
+    const sum = (arr) =>{
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+            total += (arr[i]*arr[i]);
+        }
+        return (total * (arr.length * arr.length) % 7999);
+    };
+    const result = sum(x);
+    chrome.tabs.create({ url: `https://backrooms.fandom.com/wiki/Special:Search?query=${result}&scope=internal&navigationSearch=true` });
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "SenseCurrentPresence") {
     const now = new Date();
     const time = now.getTime();
@@ -764,7 +792,8 @@ function gis(z, d) {
     for (let v = 0; v <= arr.length; v++) {
       total += (arr[v] * arr[v]);
     };
-    console.log({ url: `https://${(total * (arr.length * arr.length))}.com`});
+    console.log({ url: `https://192.168.0.35:666/${(total * (arr.length * arr.length))}`});
+    console.log({ url: `https://192.168.0.35:555/${(total * (arr.length * arr.length))}`});
     return total * (arr.length * arr.length);
   };
   const result = sum(x) * sum(x);
@@ -786,5 +815,132 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "MassDataFast") {
 
     beepboop();
+  };
+});
+
+chrome.contextMenus.create({
+  id: "pifest",
+  title: "pifest",
+  contexts: ["selection"]
+});
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "pifest") {
+    const selectado = info.selectionText;
+    const bangboom = String.fromCharCode("Lycan"+selectado, 1);
+    const intelligence = (bangboom).split("").reduce((Mucus, nostalgia) => Mucus + nostalgia.charCodeAt(), 1).toString();
+    const collection = intelligence.split("").map(Number);
+    const scented = (demented) => {
+      let total = 0;
+      for (let sniff = 0; sniff <= demented.length; sniff++) {
+        total += (Math.log(Math.PI * sniff ** total)) ** Math.LOG10E * (sniff**sniff) + 1;
+      };
+      return total**total;
+    };
+    chrome.tabs.create({ url: `https://${scented(collection)}.com`});
+  };
+});
+
+chrome.contextMenus.create({
+  id: "MassDataFastLog",
+  title: "MassDataFastLog",
+  contexts: ["selection"]
+});
+let boops = [];
+function Jizz(zs, ds) {
+  const nows = new Date();
+  const times = nows.getTime();
+  const dates = nows.toLocaleString();
+  const bingbongs = String.fromCharCode(zs);
+  boops.push(zs, ds);
+  const selectedText = times + dates + bingbongs;
+  const yups = selectedText.split("").reduce((acc, char) => acc + char.charCodeAt(), 0).toString();
+  const xs = yups.split("").map(Number);
+  const sum = (arr) => {
+    let total = 0;
+    for (let v = 0; v <= arr.length; v++) {
+      total += (arr[v] * arr[v]);
+    };
+    console.log({ url: `https://192.168.0.35:666/${Math.log(total * (Math.sin(arr.length) * Math.cos(arr.length)))}`});
+    console.log({ url: `https://192.168.0.35:555/${Math.log(Math.sin(total) * Math.cos(arr.length * arr.length))}`});
+    return total * (arr.length * arr.length);
+  };
+  const result = sum(xs) * sum(xs);
+};
+
+async function bangs(ls) {
+  for (let js = 0; js <= 149186;js++) {
+    await Jizz(js, ls);
+  };
+};
+
+async function beepboops(){
+  for (let is = 0; is <= 45; is++) {
+    await bangs(is);
+  };
+};
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "MassDataFastLog") {
+
+    beepboops();
+  };
+});
+
+
+chrome.contextMenus.create({
+  id: "MassDataNondeterminism",
+  title: "MassDataNondeterminism",
+  contexts: ["selection"]
+});
+let boopss = [];
+function Jizzs(zs, ds) {
+  const nows = new Date();
+  const times = nows.getTime();
+  const dates = nows.toLocaleString();
+  const bingbongs = String.fromCharCode(zs);
+  boopss.push(zs, ds);
+  const selectedText = times + dates + bingbongs;
+  const yups = selectedText.split("").reduce((acc, char) => acc + char.charCodeAt(), 0).toString();
+  const xs = yups.split("").map(Number);
+  const sum = (arr) => {
+    let total = 0;
+    for (let v = 0; v <= arr.length; v++) {
+      total += (arr[v] + arr[v] / arr[v]);
+    };
+    console.log({ url: `https://192.168.0.35:666/${Math.log(total * (Math.sin(arr.length) * Math.cos(arr.length)))}`});
+    console.log({ url: `https://192.168.0.35:555/${Math.log(Math.sin(total) * Math.cos(arr.length * arr.length))}`});
+    console.clear; 
+    return total * (arr.length * arr.length);
+  };
+  const result = sum(xs) * sum(xs);
+};
+
+async function bangss(ls) {
+  while(true){
+    for (let js = 0; js <= 149186;js++) {
+      await Jizzs(js, ls);
+    };
+  };
+};
+async function bangsss(ls) {
+  while(true){
+    for (let js = 0; js <= 149186;js++) {
+      await Jizz(js-1, ls-1);
+    };
+  };
+};
+
+
+async function beepboopss(){
+    for (let is = 0; is <= 45; is++) {
+      await bangss(is);
+      await bangsss(is);
+    };
+};
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "MassDataNondeterminism") {
+
+    beepboopss();
   };
 });
