@@ -16,6 +16,8 @@ BigSearch: Opens up tabs of whats highlighted searching through Spotify, IMDb, e
 
 CIASearch: CIA search
 
+backroomssearch: search through backrooms
+
 Glasses: domain.glass lookup of selected Text (Does not have to be an actual domain, just highlight any text, it will remove the %20)
 
 SenseCurrentSCP: Scp wiki lookup based off timing 
@@ -34,6 +36,8 @@ Backy: Waybackmachine report on Current Page
 
 CentralIntelligenceAccumulator: Accumulator of highlighted text which searches through CIA
 
+CIALogistics: Enough Said
+
 CRT: CRT lookup of highlighted text
 
 DomainGlass: Domain.Glass lookup for accumulated highlighted text
@@ -42,13 +46,21 @@ DomainGlasses: Domain.glass lookup for current domain
 
 FearAndLoathing: Page chooser for Hunter S Thompson's Fear And Loathing in Las Vegas.
 
+InstaSearch: Instagram Search
+
 MassData: Mathematical Domain Mass Data Logger, to access the log run it with the background console open in chrome://extension 1+E238 domains.
 
 MassDataFaster: Orchestration of MassData through Asynchronous Actions, (May cause stalling until finished, est  1-2 minutes)
 
+SenseCurrent: Sense the Current
+
+Nonsite: non .com browser open
+
 Reversing: Reverse Engineering page chooser on the book Reversing Secrets of Reverse Engineering
 
 ReverseLight: Backend recon regarding what was highlighted.
+
+SenseCurrentPresence: Sense current Presence related
 
 Strong: Determine the time and date, then accumulate from the selected text added to it from both sides anonymously placing the accumulation back into the characters before mapping out the numerical value.
 
@@ -57,3 +69,5 @@ WebCache: Google Webcache
 XSearch: Search through Twitter/X
 
 SuperSquare: Builds a matrix of highlighted text, squaring the charCodeAt() of each Char, then multiplying the total added together by the square of the Matrix Length.
+
+47: Mass Data into Illegal Bins (broken simulation)
