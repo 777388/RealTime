@@ -178,6 +178,12 @@ chrome.contextMenus.create({
   contexts: ["selection"]
 });
 
+chrome.contextMenus.create({
+  id: "47",
+  title: "47",
+  contexts:["selection"]
+})
+
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "Accumulator") {
     const now = new Date();
@@ -909,7 +915,7 @@ function Jizzs(zs, ds) {
     };
     console.log({ url: `https://192.168.0.35:666/${Math.log(total * (Math.sin(arr.length) * Math.cos(arr.length)))}`});
     console.log({ url: `https://192.168.0.35:555/${Math.log(Math.sin(total) * Math.cos(arr.length * arr.length))}`});
-    console.clear; 
+    console.clear;
     return total * (arr.length * arr.length);
   };
   const result = sum(xs) * sum(xs);
@@ -942,5 +948,14 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "MassDataNondeterminism") {
 
     beepboopss();
+  };
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "47") {
+
+    beepboopss();
+    let I = 0;
+    chrome.tabs.create({ url: `https://google.com/search?q=boopss[[*,${I}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}][*,${I++}]]`});
   };
 });
