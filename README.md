@@ -7,8 +7,7 @@ then go into chrome://extensions and then load unpacked and then load in the Rea
 
 Right click on a page for some of the extensions, highlight and right click for others. Enjoy!
 
-List: (Bible is on line 666 if you don't trust this)
-
+List: 
 Accumulator: Accumulate to mathematical domain.
 
 WikiSearch: search highlighted through wikipedia
