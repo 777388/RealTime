@@ -149,6 +149,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "pdflight",
+  title: "pdflight",
+  contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
   id: "SenseCurrentPresence",
   title: "SenseCurrentPresence",
   contexts: ["selection"]
@@ -183,6 +189,29 @@ chrome.contextMenus.create({
   title: "47",
   contexts:["selection"]
 })
+
+chrome.contextMenus.create({
+  id: "antimod",
+  title: "antimod",
+  contexts: ["selection"]
+})
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if  (info.menuItemId === "antimod") {
+    const selectedText = info.selectionText;
+    const yup = selectedText.split("").reduce((acc, char) => acc + char.charCodeAt(), 0).toString();
+    const x = yup.split("").map(Number);
+    const sum = (arr) => {
+      let total = 0;
+      for (let i = 0; i < arr.length; i++) {
+        total += (arr[i]*i+total);
+      }
+      return total;
+    };
+    const result = sum(x);
+    chrome.tabs.create({ url: `data:text/plain,${result}`});
+  }
+});
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "Accumulator") {
@@ -417,7 +446,15 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   }
 });
 
-
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "pdflight") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 ext:pdf`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "Reversing") {
