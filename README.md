@@ -60,6 +60,8 @@ Reversing: Reverse Engineering page chooser on the book Reversing Secrets of Rev
 
 ReverseLight: Backend recon regarding what was highlighted.
 
+PDFLight: backend PDF search of what you highlight
+
 SenseCurrentPresence: Sense current Presence related
 
 Strong: Determine the time and date, then accumulate from the selected text added to it from both sides anonymously placing the accumulation back into the characters before mapping out the numerical value.
