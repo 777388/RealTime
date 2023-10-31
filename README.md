@@ -62,6 +62,8 @@ ReverseLight: Backend recon regarding what was highlighted.
 
 PDFLight: backend PDF search of what you highlight
 
+GOVLight: backend Gov search
+
 SenseCurrentPresence: Sense current Presence related
 
 Strong: Determine the time and date, then accumulate from the selected text added to it from both sides anonymously placing the accumulation back into the characters before mapping out the numerical value.
