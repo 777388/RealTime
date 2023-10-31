@@ -155,6 +155,12 @@ chrome.contextMenus.create({
 })
 
 chrome.contextMenus.create({
+    id: "govlight",
+    title: "govlight",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
   id: "SenseCurrentPresence",
   title: "SenseCurrentPresence",
   contexts: ["selection"]
@@ -451,6 +457,16 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     const selectedText = info.selectionText;
     for (let i = 1; i <= 255; i += 10){
         const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 ext:pdf`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "govlight") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 gov`;
         chrome.tabs.create({ url: archiveUrl });
     }
   }
