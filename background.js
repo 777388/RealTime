@@ -5,6 +5,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+   id: "identify",
+   title: "identify",
+   contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
   id: "WikiSearch",
   title: "WikiSearch",
   contexts: ["selection"]
@@ -235,6 +241,15 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     const result = sum(x);
     chrome.tabs.create({ url: `data:text/plain,${result}`});
   }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId == "identify") {
+        const selectedText = info.selectionText;
+        const usee = selectedText.length;
+        const us = selectedText.charAt(usee-1);
+        chrome.tabs.create({ url: `data:text/plain,${usee}${us}`});
+    }
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
