@@ -8,6 +8,7 @@ then go into chrome://extensions and then load unpacked and then load in the Rea
 Right click on a page for some of the extensions, highlight and right click for others. Enjoy!
 
 List: 
+
 Accumulator: Accumulate to mathematical domain.
 
 identify: Assigned Level (amount of letters highlighted + last letter in the highlighted)
