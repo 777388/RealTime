@@ -161,6 +161,24 @@ chrome.contextMenus.create({
 })
 
 chrome.contextMenus.create({
+    id: "banklight",
+    title: "banklight",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
+    id: "Deedlight",
+    title: "Deedlight",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
+    id: "userlight",
+    title: "useright",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
   id: "SenseCurrentPresence",
   title: "SenseCurrentPresence",
   contexts: ["selection"]
@@ -435,7 +453,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "nonsite") {
-    const selectedText = info.selectionText;
+    const selectedText = info.selectionText.replaceAll(" ", '');
     const archiveUrl = `https://${selectedText}.com`;
     chrome.tabs.create({ url: archiveUrl });
   }
@@ -467,6 +485,36 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     const selectedText = info.selectionText;
     for (let i = 1; i <= 255; i += 10){
         const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 gov`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "banklight") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28bank %7C invoice %7C amount%29`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "Deedlight") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28 Deed %7C Title %7C Contract %29`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "userlight") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28 username %7C user %7C account %7C UID %29`;
         chrome.tabs.create({ url: archiveUrl });
     }
   }
@@ -786,7 +834,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "Glasses") {
-    const selectedText = info.selectionText.replace(" ", '');
+    const selectedText = info.selectionText.replaceAll(" ", '');
     const archiveUrl = `https://domain.glass/${selectedText}.com`;
     chrome.tabs.create({ url: archiveUrl });
   }
