@@ -64,6 +64,12 @@ PDFLight: backend PDF search of what you highlight
 
 GOVLight: backend Gov search
 
+Userlight: backend user search
+
+Deedlight: backend contract and deed search
+
+banklight: backend bank search
+
 SenseCurrentPresence: Sense current Presence related
 
 Strong: Determine the time and date, then accumulate from the selected text added to it from both sides anonymously placing the accumulation back into the characters before mapping out the numerical value.
