@@ -5,9 +5,21 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-   id: "identify",
-   title: "identify",
+   id: "identifylevel",
+   title: "identifylevel",
    contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
+   id: "identifysublevel",
+   title: "identifysublevel",
+   contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
+   id: "identifyroom",
+   title: "identifyroom",
+    contexts: ["selection"]
 });
 
 chrome.contextMenus.create({
@@ -244,11 +256,29 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-    if (info.menuItemId == "identify") {
+    if (info.menuItemId == "identifylevel") {
         const selectedText = info.selectionText;
         const usee = selectedText.length;
         const us = selectedText.charAt(usee-1);
         chrome.tabs.create({ url: `data:text/plain,${usee}${us}`});
+    }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId == "identifysublevel") {
+        const selectedText = info.selectionText;
+        const usee = selectedText.length;
+        const us = selectedText.charAt(usee-1);
+        chrome.tabs.create({ url: `data:text/plain,Sub${usee}${us}`});
+    }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+   if (info.menuItemId == "identifyroom") {
+        const selectedText = info.selectionText;
+        const usee = selectedText.length;
+        const us = selectedText.charAt(usee-1);
+        chrome.tabs.create({ url: `data:text/plain,${us}${usee}%reverse`});
     }
 });
 
