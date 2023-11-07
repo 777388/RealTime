@@ -11,7 +11,13 @@ List:
 
 Accumulator: Accumulate to mathematical domain.
 
-identify: Assigned Level (amount of letters highlighted + last letter in the highlighted)
+identifylevel: Assigned Level (amount of letters highlighted + last letter in the highlighted)
+
+identifysublevel: Assigned SubLevel (amount of letters highlighted + last letter in the highlighted)
+
+identifyroom: Assigned Room (last letter in the highlighted + amount of letters highlighted)
+
+identifyworkspace: Assigned Room (first letter in the highlighted + amount of letters highlighted)
 
 WikiSearch: search highlighted through wikipedia
 
