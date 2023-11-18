@@ -5,6 +5,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+    id: "genome",
+    title: "genome",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
    id: "identifylevel",
    title: "identifylevel",
    contexts: ["selection"]
@@ -19,6 +25,12 @@ chrome.contextMenus.create({
 chrome.contextMenus.create({
    id: "identifyroom",
    title: "identifyroom",
+   contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
+    id: "identifyworkspace",
+    title: "identifyworkspace",
     contexts: ["selection"]
 });
 
@@ -238,6 +250,9 @@ chrome.contextMenus.create({
   contexts: ["selection"]
 })
 
+
+
+
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if  (info.menuItemId === "antimod") {
     const selectedText = info.selectionText;
@@ -265,6 +280,28 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId == "genome") {
+        const selectedText = info.selectionText;
+        let b = "";
+            for (let i = 0; i < selectedText.length; i++) {
+                if (selectedText.charAt(i).toLowerCase() == "A".toLowerCase()) {
+                    b += "A";
+                }
+                if (selectedText.charAt(i).toLowerCase() == "C".toLowerCase()) {
+                    b += "C";
+                }
+                if (selectedText.charAt(i).toLowerCase() == "G".toLowerCase()) {
+                    b += "G";
+                }
+                if (selectedText.charAt(i).toLowerCase() == "T".toLowerCase()) {
+                    b += "T";
+                }
+            }
+        chrome.tabs.create({ url: `data:text/plain,Genome ${b}  reference:https://genome.ucsc.edu/cgi-bin/hgBlat`});
+    }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
     if (info.menuItemId == "identifysublevel") {
         const selectedText = info.selectionText;
         const usee = selectedText.length;
@@ -279,6 +316,15 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         const usee = selectedText.length;
         const us = selectedText.charAt(usee-1);
         chrome.tabs.create({ url: `data:text/plain,${us}${usee}%reverse`});
+    }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+   if (info.menuItemId == "identifyworkspace") {
+        const selectedText = info.selectionText;
+        const usee = selectedText.length;
+        const us = selectedText.charAt(0);
+        chrome.tabs.create({ url: `data:text/plain,${us}${usee}`});
     }
 });
 
