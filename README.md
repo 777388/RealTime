@@ -11,6 +11,8 @@ List:
 
 Accumulator: Accumulate to mathematical domain.
 
+Genome: Highlight language for genome sequencing. (*Requires 20 characters in the provided site, so you can try duplicating the output in ACGT format to 20 chars)
+
 identifylevel: Assigned Level (amount of letters highlighted + last letter in the highlighted)
 
 identifysublevel: Assigned SubLevel (amount of letters highlighted + last letter in the highlighted)
