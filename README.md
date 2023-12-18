@@ -11,6 +11,10 @@ List:
 
 Accumulator: Accumulate to mathematical domain.
 
+Projectlight & Projectlight PDF: full ipv4 range backend server recon regarding projects of what you highlight
+
+Researchlight & Researchlight PDF: Full ipv4 range backend server recon regarding research of what you highlight
+
 Genome: Highlight language for genome sequencing. (*Requires 20 characters in the provided site, so you can try duplicating the output in ACGT format to 20 chars)
 
 identifylevel: Assigned Level (amount of letters highlighted + last letter in the highlighted)
