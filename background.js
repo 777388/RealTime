@@ -5,6 +5,18 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+    id: "projectlight",
+    title: "projectlight",
+    contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
+    id: "researchlight",
+    title: "researchlight",
+    contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
     id: "genome",
     title: "genome",
     contexts: ["selection"]
@@ -559,6 +571,26 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         chrome.tabs.create({ url: archiveUrl });
     }
   }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId === "projectlight") {
+        const selectedText = info.selectionText;
+        for (let i = 1; i <= 255; i += 10){
+            const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 Project`;
+            chrome.tabs.create({ url: archiveUrl});
+        }
+    }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId === "researchlight") {
+        const selectedText = info.selectionText;
+        for (let i = 1; i <= 255; i += 10){
+            const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 research`;
+            chrome.tabs.create({ url: archiveUrl});
+        }
+    }
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
