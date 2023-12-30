@@ -5,6 +5,12 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+    id: "bucketlist",
+    title: "bucketlist",
+    contexts: ["selection"]
+});
+
+chrome.contextMenus.create({
     id: "projectlight",
     title: "projectlight",
     contexts: ["selection"]
@@ -574,6 +580,22 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   }
 });
 
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "bucketlist") {
+    const selectedText = info.selectionText;
+    const archivedUrl = `https://www.google.com/search?q=site:s3.amazonaws.com %26 ${selectedText}`;
+    chrome.tabs.create({ url: archivedUrl });
+    const archivesUrl = `https://www.google.com/search?q=site:blob.core.windows.net %26 ${selectedText}`;
+    chrome.tabs.create({ url: archivesUrl });
+    const archiverUrl = `https://www.google.com/search?q=site:nyc3.digitaloceanspaces.com %26 ${selectedText}`;
+    chrome.tabs.create({ url: archiverUrl });
+    const archivetUrl = `https://www.google.com/search?q=site:drive.google.com %26 ${selectedText}`;
+    chrome.tabs.create({ url: archivetUrl });
+    const archiveeUrl = `https://www.google.com/search?q=inurl:usgovcloudapi %26 ${selectedText}`;
+    chrome.tabs.create({ url: archiveeUrl });
+    
+  }
+});
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "reverselight") {
