@@ -11,6 +11,8 @@ List:
 
 Accumulator: Accumulate to mathematical domain.
 
+bucketlist: Search highlighted through S3, windows blob, digitalocean, google drive, and usgovcloudapi
+
 Projectlight & Projectlight PDF: full ipv4 range backend server recon regarding projects of what you highlight
 
 Researchlight & Researchlight PDF: Full ipv4 range backend server recon regarding research of what you highlight
