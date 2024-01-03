@@ -9,6 +9,11 @@ chrome.contextMenus.create({
     title: "bucketlist",
     contexts: ["selection"]
 });
+chrome.contextMenus.create({
+    id: "bucketlistpdf",
+    title: "bucketlistpdf",
+    contexts: ["selection"]
+});
 
 chrome.contextMenus.create({
     id: "projectlight",
@@ -221,8 +226,20 @@ chrome.contextMenus.create({
 })
 
 chrome.contextMenus.create({
+    id: "govlightpdf",
+    title: "govlightpdf",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
     id: "banklight",
     title: "banklight",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
+    id: "banklightpdf",
+    title: "banklightpdf",
     contexts: ["selection"]
 })
 
@@ -233,8 +250,20 @@ chrome.contextMenus.create({
 })
 
 chrome.contextMenus.create({
+    id: "Deedlightpdf",
+    title: "Deedlightpdf",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
     id: "userlight",
-    title: "useright",
+    title: "userlight",
+    contexts: ["selection"]
+})
+
+chrome.contextMenus.create({
+    id: "userlightpdf",
+    title: "userlightpdf",
     contexts: ["selection"]
 })
 
@@ -587,11 +616,28 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     chrome.tabs.create({ url: archivedUrl });
     const archivesUrl = `https://www.google.com/search?q=site:blob.core.windows.net %26 ${selectedText}`;
     chrome.tabs.create({ url: archivesUrl });
-    const archiverUrl = `https://www.google.com/search?q=site:nyc3.digitaloceanspaces.com %26 ${selectedText}`;
+    const archiverUrl = `https://www.google.com/search?q=site:digitaloceanspaces.com %26 ${selectedText}`;
     chrome.tabs.create({ url: archiverUrl });
     const archivetUrl = `https://www.google.com/search?q=site:drive.google.com %26 ${selectedText}`;
     chrome.tabs.create({ url: archivetUrl });
     const archiveeUrl = `https://www.google.com/search?q=inurl:usgovcloudapi %26 ${selectedText}`;
+    chrome.tabs.create({ url: archiveeUrl });
+    
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "bucketlistpdf") {
+    const selectedText = info.selectionText;
+    const archivedUrl = `https://www.google.com/search?q=site:s3.amazonaws.com %26 ${selectedText} %26 ext:pdf`;
+    chrome.tabs.create({ url: archivedUrl });
+    const archivesUrl = `https://www.google.com/search?q=site:blob.core.windows.net %26 ${selectedText} %26 ext:pdf`;
+    chrome.tabs.create({ url: archivesUrl });
+    const archiverUrl = `https://www.google.com/search?q=site:digitaloceanspaces.com %26 ${selectedText} %26 ext:pdf`;
+    chrome.tabs.create({ url: archiverUrl });
+    const archivetUrl = `https://www.google.com/search?q=site:drive.google.com %26 ${selectedText} %26 ext:pdf`;
+    chrome.tabs.create({ url: archivetUrl });
+    const archiveeUrl = `https://www.google.com/search?q=inurl:usgovcloudapi %26 ${selectedText} %26 ext:pdf`;
     chrome.tabs.create({ url: archiveeUrl });
     
   }
@@ -668,10 +714,30 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "govlightpdf") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 gov %26 ext:pdf`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "banklight") {
     const selectedText = info.selectionText;
     for (let i = 1; i <= 255; i += 10){
         const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28bank %7C invoice %7C amount%29`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "banklightpdf") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28bank %7C invoice %7C amount%29 %26 ext:pdf`;
         chrome.tabs.create({ url: archiveUrl });
     }
   }
@@ -688,10 +754,30 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "Deedlight") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28 Deed %7C Title %7C Contract %29 %26 ext:pdf`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId === "userlight") {
     const selectedText = info.selectionText;
     for (let i = 1; i <= 255; i += 10){
         const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28 username %7C user %7C account %7C UID %29`;
+        chrome.tabs.create({ url: archiveUrl });
+    }
+  }
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId === "userlightpdf") {
+    const selectedText = info.selectionText;
+    for (let i = 1; i <= 255; i += 10){
+        const archiveUrl = `https://www.google.com/search?q=%28site:***${i} %7C site:***${i+1} %7C site:***${i+2} %7C site:***${i+3} %7C site:***${i+4} %7C site:***${i+5} %7C site:***${i+6} %7C site:***${i+7} %7C site:***${i+8} %7C site:***${i+9}%29 %26 ${selectedText} %26 %28 username %7C user %7C account %7C UID %29 %26 ext:pdf`;
         chrome.tabs.create({ url: archiveUrl });
     }
   }
